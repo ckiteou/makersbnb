@@ -16,6 +16,47 @@
 #### User Stories ####
 
 ```
+User Stories
+
+As a space owner
+So I can rent out my space
+I want to be able to list it
+
+As a space owner
+So I can manage my listing
+I want to be able to sign up
+
+As a space owner
+So I can rent all my spaces
+I want to be able to list multiple spaces
+
+As a space owner
+So that I can make my listing more attractive
+I want to be able to name the space, provide a short description of the space & a price per night
+
+As a space owner
+So I do not get double bookings
+A night which has already been booked cannot be available to other guests once confirmed by the guest
+
+As a space owner
+To avoid undesirable guests
+Before a booking is confirmed, I want to approve each request
+
+As a space owner
+So I can only host when the space is available
+I would like to only be able to offer a range of dates when the space is available
+
+As a guest
+So that I can use Makersbnb
+I would like to sign up for Makersbnb
+
+As a guest
+So that I can hire a space
+I want to be able to make a request to hire a space for one night
+
+As a guest
+So that I can book a space
+I want to be able to confirm the space after the owner has approved my request
 ```
 
 ####Nice-to-haves ####
