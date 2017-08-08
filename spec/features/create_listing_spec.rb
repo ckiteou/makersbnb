@@ -7,11 +7,11 @@ feature 'Creating listings' do
     click_button 'Create listing'
     expect(current_path).to eq '/listings'
 
-    within 'ul#listings' do
+    # within 'ul#listings' do
       expect(page).to have_content('My beautiful home')
       expect(page).to have_content('lovely place')
       expect(page).to have_content(50)
-    end
+    # end
   end
 
   scenario 'it can create a more than one listing' do

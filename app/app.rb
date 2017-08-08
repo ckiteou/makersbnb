@@ -10,7 +10,7 @@ class MakersBnB < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
-    "infrastructure working"
+    redirect '/listings'
   end
 
   get '/listings' do
