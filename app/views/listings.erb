@@ -1,4 +1,13 @@
 <h1> Listings </h1>
 <ul id='listings'>
-  <li><%= @listings.last.name %></li>
+  <li>
+  <%= @listings.last.name %>
+  <form action="/listings/1" method="get">
+    <input type="submit" value="Request to book 1">
+  </form>
+  </li>
 </ul>
+
+<% if flash[:notice] %>
+  <div id='notice'><%= flash[:notice] %></div>
+<% end %>
