@@ -1,4 +1,6 @@
+ENV["RACK_ENV"] ||= "development"
 require 'sinatra/base'
+require_relative 'data_mapper_setup'
 
 class MakersBnB < Sinatra::Base
   enable :sessions
@@ -8,7 +10,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/listings' do
-    @name = session[:name]
+    @listings = Listing.all
     erb :'listings'
   end
 
@@ -18,7 +20,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/listings' do
-    session[:name] = params[:name]
+    Listing.create(name: params[:name])
     redirect '/listings'
   end
   run! if app_file == $0

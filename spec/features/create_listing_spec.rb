@@ -7,6 +7,8 @@ feature 'Creating listings' do
 
     # within 'ul#listings' do
       expect(page).to have_content('My beautiful home')
+      listing = Listing.last
+      expect(listing.name).to include 'My beautiful home'
     # end
   end
 end
