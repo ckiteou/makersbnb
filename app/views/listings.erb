@@ -1,15 +1,15 @@
 <section id='main-section'>
   <h2> Listings </h2>
-  <a href='/listings/new'>add new</a>
+  <a href='/listings/new'>+ add new</a>
     <ul>
       <% @listings.reverse.each do |listing| %>
-        <li><span id ='name'>Name: <%= listing.name %></span></li>
+        <li><h3>Name: <%= listing.name %></h3>
           <p>Description: <%= listing.description %></p>
-          <p>Price per night: <%= listing.price %></p>
+          <p>Price per night: £<%= listing.price %></p>
           <form action="/listings/1" method="get">
           <input id='button' type="submit" value="Request to book <%= listing.name %>">
           </form>
-          <% end %>
+          <% end %></li>
     </ul>
 </section>
 
