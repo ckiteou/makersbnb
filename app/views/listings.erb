@@ -8,13 +8,17 @@
     <section id='listings'>
     <h2> Listings </h2>
 
-    <ul id='listings'>
-      <% @listings.reverse.each do |listing| %>
-      <li><span id ='name'>Name: <%= listing.name %></span></li>
-      Description: <%= listing.description %></br>
-      Price per night: <%= listing.price %></br></br>
-      <% end %>
-    </ul>
-  </section>
-  </body>
-</html>
+<ul id='listings'>
+  <% @listings.reverse.each do |listing| %>
+  <li><span id ='name'>Name: <%= listing.name %></span></li>
+  Description: <%= listing.description %></br>
+  Price per night: <%= listing.price %></br></br>
+  <form action="/listings/1" method="get">
+    <input type="submit" value="Request to book <%= listing.name %>">
+  </form>
+  <% end %>
+</ul>
+
+<% if flash[:notice] %>
+  <div id='notice'><%= flash[:notice] %></div>
+<% end %>
