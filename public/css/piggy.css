@@ -1,0 +1,31 @@
+* {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+
+body {
+  padding: 20px;
+}
+
+h1 {
+  color: #484848;
+  display: inline;
+  float: right;
+}
+
+h2 {
+  color: #F27674;
+}
+
+#listings {
+  background-color: #F4F4F4;
+  padding: 20px;
+}
+
+#name {
+  color: #F27674;
+}
+
+#logo {
+  position: static;
+  padding-bottom: 20px;
+}
