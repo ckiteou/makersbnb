@@ -5,5 +5,12 @@
   <li><b>Name: <%= listing.name %></b></li>
   Description: <%= listing.description %></br>
   Price per night: <%= listing.price %></br></br>
+  <form action="/listings/1" method="get">
+    <input type="submit" value="Request to book <%= listing.name %>">
+  </form>
   <% end %>
 </ul>
+
+<% if flash[:notice] %>
+  <div id='notice'><%= flash[:notice] %></div>
+<% end %>
