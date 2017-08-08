@@ -1,6 +1,9 @@
 <h1> Listings </h1>
+
 <ul id='listings'>
-  <li><%= @listings.last.name %></li>
-  <p><%= @listings.last.description %></p>
-  <p><%= @listings.last.price %></p>
+  <% @listings.reverse.each do |listing| %>
+  <li><b>Name: <%= listing.name %></b></li>
+  Description: <%= listing.description %></br>
+  Price per night: <%= listing.price %></br></br>
+  <% end %>
 </ul>
