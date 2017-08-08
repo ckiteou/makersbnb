@@ -3,7 +3,7 @@ feature 'Creating requests' do
     visit '/listings/new'
     fill_in :name, with: 'Our beautiful home!!'
     click_button 'Create listing'
-    click_button 'Request to book 1'
+    click_button 'Request to book Our beautiful home!!'
     #expect(current_path).to eq '/listings/1'
     fill_in :guest_name, with: 'Mickey Mouse'
     fill_in :guest_email, with: 'mickey@mouse.com'
