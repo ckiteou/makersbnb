@@ -5,6 +5,7 @@ require_relative 'data_mapper_setup'
 
 class MakersBnB < Sinatra::Base
   enable :sessions
+  set :public_folder, 'public'
 
   register Sinatra::Flash
 
