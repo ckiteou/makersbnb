@@ -62,7 +62,7 @@ class MakersBnB < Sinatra::Base
       session[:user_id] = @user.id
       redirect :'listings'
     else
-      flash.next[:notice] = 'Password and confirmation password do not match!'
+      flash.next[:errors] = @user.errors.full_messages
       redirect :'users/new'
     end
   end
