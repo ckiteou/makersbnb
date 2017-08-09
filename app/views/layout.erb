@@ -8,8 +8,12 @@
   <body>
     <header>
     <a href='/listings'><img id='logo' src="/images/logo.png"></a>
-    <h1>Welcome to MakersBnB</h1>
+    <h1><% if current_user %>
+    Hello, <%= current_user.first_name %></h1>
+    <% end %>
     </header>
-    <%= yield %>
+    <section id='main-section'>
+      <%= yield %>
+    </section>
   </body>
 </html>
