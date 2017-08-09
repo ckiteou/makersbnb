@@ -3,15 +3,15 @@
 <form action="/users" method="post">
   <label for="first_name">
     <p>First name:
-    <input type="text" name="first_name"></p>
+    <input type="text" name="first_name" value='<%= @user.first_name %>'></p>
   </label>
   <label for="last_name">
     <p>Last name:
-    <input type="text" name="last_name"></p>
+    <input type="text" name="last_name" value='<%= @user.last_name %>'></p>
   </label>
   <label for="email">
     <p>E-mail:
-    <input type="email" name="email"></p>
+    <input type="email" name="email" value='<%= @user.email %>'></p>
   </label>
   <label for="password">
     <p>Password:

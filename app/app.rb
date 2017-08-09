@@ -48,6 +48,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/users/new' do
+    @user = User.new
     erb :'users/new'
   end
 
@@ -60,6 +61,9 @@ class MakersBnB < Sinatra::Base
     if @user.save
       session[:user_id] = @user.id
       redirect :'listings'
+    else
+      flash.next[:notice] = 'Password and confirmation password do not match!'
+      redirect :'users/new'
     end
   end
 
