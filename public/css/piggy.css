@@ -15,8 +15,17 @@ h1 {
 
 h2 {
   color: #F27674;
-  padding: 0px 20px 0px 20px;
   display: inline-block;
+  padding: none;
+}
+
+h3 {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  font-weight: 800;
+  margin: none;
+  padding: none;
 }
 
 header {

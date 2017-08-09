@@ -13,6 +13,14 @@
     <% end %>
     </header>
     <section id='main-section'>
+      <% if flash[:notice] %>
+      <%= flash[:notice] %>
+      <% end %>
+      <% if flash[:errors] && !flash[:errors].empty? %>
+          <% flash[:errors].each do |error| %>
+              <h3><%= error %></h3><br>
+          <% end %>
+      <% end %>
       <%= yield %>
     </section>
   </body>
