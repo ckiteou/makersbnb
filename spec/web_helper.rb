@@ -1,9 +1,14 @@
-def sign_up
+def sign_up(first_name: 'Coasters',
+            last_name: 'Kiteou',
+            email: 'coasters@kiteou.com',
+            password: 'percy1234',
+            password_confirmation: 'percy1234')
   visit '/users/new'
   expect(page.status_code).to eq(200)
-  fill_in :first_name,  with: 'Coasters'
-  fill_in :last_name,   with: 'Kiteou'
-  fill_in :email,       with: 'coasters@kiteou.com'
-  fill_in :password,    with: 'percy1234'
+  fill_in :first_name,  with: first_name
+  fill_in :last_name,   with: last_name
+  fill_in :email,       with: email
+  fill_in :password,    with: password
+  fill_in :password_confirmation, with: password_confirmation
   click_button 'Sign up'
 end

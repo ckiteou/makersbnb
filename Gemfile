@@ -1,6 +1,7 @@
 
 source "https://rubygems.org"
 
+gem 'bcrypt'
 gem 'sinatra'
 gem 'sinatra-flash'
 gem 'data_mapper'
