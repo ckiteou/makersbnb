@@ -17,11 +17,9 @@
       <%= flash[:notice] %>
       <% end %>
       <% if flash[:errors] && !flash[:errors].empty? %>
-          <ul id='errors'>
           <% flash[:errors].each do |error| %>
-              <li><%= error %></li>
+              <h3><%= error %></h3><br>
           <% end %>
-          </ul>
       <% end %>
       <%= yield %>
     </section>
