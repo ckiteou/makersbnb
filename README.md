@@ -39,10 +39,6 @@ A night which has already been booked cannot be booked by other guests
 Extras 1
 ------
 As a space owner
-So I can rent all my spaces
-I want to be able to list multiple spaces
-
-As a space owner
 So I can only host when the space is available
 I would like to only be able to offer a range of dates when the space is available
 
@@ -65,6 +61,10 @@ I want to be able to login and logout
 As a guest
 So I can manage my booking(s)
 I want to be able to login and logout
+
+As a space owner
+So I can rent all my spaces
+I want to be able to list multiple spaces under one account
 
 Extras 2
 ------
