@@ -11,6 +11,7 @@ class User
   property :first_name, String
   property :last_name,  String
   property :email,      String, format: :email_address, required: true, unique: true
+
   property :password_digest,  Text
 
   def password=(password)
@@ -18,4 +19,13 @@ class User
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  def self.authenticate(email, password)
+    first(email: email)
+    #user = first(email: email)
+    # if user && BCrypt::password.new(user.password_digest) == password
+    #   user
+    # else
+    #  nil
+    # end
+  end
 end
