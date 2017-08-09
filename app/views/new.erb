@@ -1,17 +1,20 @@
-<h1> New Listing </h1>
+<section id='main-section'>
+
+<h2> New Listing </h2>
 
 <form action='/listings' method='POST'>
   <label for='name'>
-    Listing Name:
-    <input type='text' name='name' />
+    <p>Listing Name:
+    <input type='text' name='name' /></p>
   </label>
   <label for='description'>
-    Description:
-    <input type='text' name='description' />
+    <p>Description:
+    <input type='text' name='description' /></p>
   </label>
   <label for='price'>
-    Price:
-    <input type='text' name='price' />
+    <p>Price in £:
+    <input type='text' name='price' /></p>
   </label>
-  <input type='submit' value='Create listing'>
+  <input id='button' type='submit' value='Create listing'>
 </form>
+</section>

@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>MakersBnB</title>
-    <!-- <link rel="stylesheet" href="/css/piggy.css"> -->
-  </head>
-  <body>
-    <section id='listings'>
-    <h2> Listings </h2>
-
-<ul id='listings'>
-  <% @listings.reverse.each do |listing| %>
-  <li><span id ='name'>Name: <%= listing.name %></span></li>
-  Description: <%= listing.description %></br>
-  Price per night: <%= listing.price %></br></br>
-  <form action="/listings/1" method="get">
-    <input type="submit" value="Request to book <%= listing.name %>">
-  </form>
-  <% end %>
-</ul>
+<section id='main-section'>
+  <h2> Listings </h2>
+  <a href='/listings/new'>+ add new</a>
+    <ul>
+      <% @listings.reverse.each do |listing| %>
+        <li><h3>Name: <%= listing.name %></h3>
+          <p>Description: <%= listing.description %></p>
+          <p>Price per night: £<%= listing.price %></p>
+          <form action="/listings/1" method="get">
+          <input id='button' type="submit" value="Request to book <%= listing.name %>">
+          </form>
+          <% end %></li>
+    </ul>
+</section>
 
 <% if flash[:notice] %>
   <div id='notice'><%= flash[:notice] %></div>
