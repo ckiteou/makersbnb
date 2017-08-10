@@ -38,10 +38,6 @@ class MakersBnB < Sinatra::Base
     redirect '/listings'
   end
 
-  get '/listings/1' do
-    erb :'listings/1'
-  end
-
   post '/listings/request' do
     Request.create(guest_name: params[:guest_name], guest_email: params[:guest_email])
     flash.next[:notice] = "Booking confirmed!"
@@ -83,6 +79,15 @@ class MakersBnB < Sinatra::Base
     end
   end
 
+  get '/listings/:id' do
+    @listing = Listing.get(params[:id])
+    erb :'listings/dates'
+  end
+
+  # post "/listings/:id/request" do
+  #   @date =
+  # end
+  
   delete '/sessions' do
     session[:user_id] = nil
     flash.keep[:notice] = 'goodbye!'
