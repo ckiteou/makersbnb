@@ -10,11 +10,13 @@
     <a href='/listings'><img id='logo' src="/images/logo.png"></a>
     <h1><% if current_user %>
     Hello, <%= current_user.first_name %></h1>
-    <% end %>
     <form action="/sessions" method="post">
       <input type="hidden" name="_method" value="delete">
       <input id='button' type="submit" value="Sign out">
     </form>
+    <%else%>
+    <a href='/users/login'>Sign in</a> or <a href='/users/new'>Sign up</a>
+    <% end %>
     </header>
     <section id='main-section'>
       <% if flash[:notice] %>
