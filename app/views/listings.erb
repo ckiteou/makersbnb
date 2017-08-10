@@ -5,9 +5,6 @@
         <li><h3>Name: <%= listing.name %></h3>
           <p>Description: <%= listing.description %></p>
           <p>Price per night: £<%= listing.price %></p>
-          <form action="/listings/<%= listing.id %>" method="post">
-          <input type="hidden" name="_method" value="PUT">
-          <input id='button' type="submit" value="Request to book <%= listing.name %>">
-          </form>
+          <a href="/listings/<%= listing.id %>">Request to book <%= listing.name %></a>
           <% end %></li>
     </ul>
