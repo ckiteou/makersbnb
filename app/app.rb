@@ -84,5 +84,9 @@ class MakersBnB < Sinatra::Base
     erb :'listings/dates'
   end
 
+  # post "/listings/:id/request" do
+  #   @date =
+  # end
+
   run! if app_file == $0
 end

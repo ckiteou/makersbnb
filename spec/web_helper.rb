@@ -13,7 +13,7 @@ def sign_up(first_name: 'Coasters',
   click_button 'Sign up'
 end
 
-def create_listing(name: "Cong", description: "Cambridge bachelorette pad",price: 100)
+def create_listing(name: "Cong's Pad", description: "Cambridge bachelorette pad",price: 100)
   visit '/listings/new'
   fill_in :name, with: name
   fill_in :description, with: description
