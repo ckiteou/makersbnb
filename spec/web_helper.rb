@@ -12,3 +12,11 @@ def sign_up(first_name: 'Coasters',
   fill_in :password_confirmation, with: password_confirmation
   click_button 'Sign up'
 end
+
+def create_listing(name: "Cong", description: "Cambridge bachelorette pad",price: 100)
+  visit '/listings/new'
+  fill_in :name, with: name
+  fill_in :description, with: description
+  fill_in :price, with: price
+  click_button 'Create listing'
+end

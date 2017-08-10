@@ -4,6 +4,7 @@ require 'sinatra/flash'
 require_relative 'data_mapper_setup'
 
 class MakersBnB < Sinatra::Base
+  use Rack::MethodOverride
   enable :sessions
   set :session_secret, 'super secret'
   set :public_folder, 'public'
@@ -35,10 +36,6 @@ class MakersBnB < Sinatra::Base
                    description: params[:description],
                    price: params[:price])
     redirect '/listings'
-  end
-
-  get '/listings/1' do
-    erb :'listings/1'
   end
 
   post '/listings/request' do
@@ -80,6 +77,11 @@ class MakersBnB < Sinatra::Base
       flash.now[:errors] = ['The email or password is incorrect']
       erb :'users/login'
     end
+  end
+
+  put '/listings/:id' do
+    @listing = Listing.find(params[:id])
+    erb :'listings/dates'
   end
 
   run! if app_file == $0
