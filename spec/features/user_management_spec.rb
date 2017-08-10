@@ -38,6 +38,8 @@ feature 'User log in' do
   scenario 'with correct credentials' do
     sign_in(email: user.email, password: user.password)
     expect(page).to have_content "Hello, #{user.first_name}"
+    expect(page).to have_button "Sign out"
+    expect(page).not_to have_link "Sign in"
   end
 
 
@@ -58,5 +60,8 @@ feature 'User signs out' do
     click_button 'Sign out'
     expect(page).to have_content('goodbye!')
     expect(page).not_to have_content "Hello, #{user.first_name}"
+    expect(page).to have_link 'Sign in'
+    expect(page).to have_link 'Sign up'
+    expect(page).not_to have_button 'Sign out'
   end
 end
