@@ -26,3 +26,4 @@ def create_listing(name: "Cong's Pad", description: "Cambridge bachelorette pad"
   fill_in :description, with: description
   fill_in :price, with: price
   click_button 'Create listing'
+end
