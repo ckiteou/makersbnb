@@ -10,7 +10,7 @@ h1 {
   color: #484848;
   display: inline;
   float: right;
-  padding: 30px 30px;
+  padding: 10px 30px;
 }
 
 h2 {
@@ -26,6 +26,12 @@ h3 {
   font-weight: 800;
   margin: none;
   padding: none;
+}
+
+h4 {
+  color: #979797;
+  float: right;
+  padding: 30px 30px;
 }
 
 header {
@@ -61,10 +67,26 @@ li {
   margin: 20px;
 }
 
-a {
+a:link, a:visited {
   color: #F27674;
   display: inline-block;
   padding-left: 20px;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+    text-decoration-line: underline;
+}
+
+a:link#user-button, a:visited#user-button {
+  color: #F27674;
+  text-decoration: none;
+  padding-left: 0px;
+}
+
+a:hover#user-button, a:active#user-button {
+    text-decoration-line: underline;
+    padding-left: 0px;
 }
 
 #main-section {
@@ -93,3 +115,18 @@ h3 {
   padding: 10px 20px 10px 20px;
   margin-bottom: 20px;
 }
+
+#button-signout {
+  border-radius: 28px;
+  border-width: 0;
+  color: #ffffff;
+  background: #979797;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 0px;
+}
+
+h3#flash {
+  color: #979797;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 800;
