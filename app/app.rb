@@ -80,7 +80,13 @@ class MakersBnB < Sinatra::Base
   end
 
   put '/listings/:id' do
-    @listing = Listing.find(params[:id])
+    session[:listing] = Listing.get(params[:id])
+    p session[:listing]
+    redirect to("/listings/#{params[:id]}")
+  end
+
+  get 'listings/:id' do
+    @listing = session[:listing]
     erb :'listings/dates'
   end
 
