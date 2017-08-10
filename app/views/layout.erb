@@ -20,11 +20,11 @@
     </header>
     <section id='main-section'>
       <% if flash[:notice] %>
-      <%= flash[:notice] %>
+      <h3 id='flash'><%= flash[:notice] %></h3>
       <% end %>
       <% if flash[:errors] && !flash[:errors].empty? %>
           <% flash[:errors].each do |error| %>
-              <h3><%= error %></h3><br>
+              <h3 id='flash'><%= error %></h3><br>
           <% end %>
       <% end %>
       <%= yield %>

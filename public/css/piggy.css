@@ -124,3 +124,9 @@ h3 {
   padding: 10px 20px 10px 20px;
   margin-bottom: 0px;
 }
+
+h3#flash {
+  color: #979797;
+  display: block;
+  text-transform: uppercase;
+  font-weight: 800;
