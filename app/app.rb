@@ -87,6 +87,12 @@ class MakersBnB < Sinatra::Base
   # post "/listings/:id/request" do
   #   @date =
   # end
+  
+  delete '/sessions' do
+    session[:user_id] = nil
+    flash.keep[:notice] = 'goodbye!'
+    redirect to '/listings'
+  end
 
   run! if app_file == $0
 end

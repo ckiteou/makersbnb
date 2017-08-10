@@ -9,16 +9,22 @@
     <header>
     <a href='/listings'><img id='logo' src="/images/logo.png"></a>
     <h1><% if current_user %>
-    Hello, <%= current_user.first_name %></h1>
+    Hello, <%= current_user.first_name %>
+    <form action="/sessions" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input id='button-signout' type="submit" value="Sign out">
+    </form></h1>
+    <%else%>
+    <h4><a href='/users/login' id='user-button'>Sign in</a> or <a href='/users/new' id='user-button'>Sign up</a></h4>
     <% end %>
     </header>
     <section id='main-section'>
       <% if flash[:notice] %>
-      <%= flash[:notice] %>
+      <h3 id='flash'><%= flash[:notice] %></h3>
       <% end %>
       <% if flash[:errors] && !flash[:errors].empty? %>
           <% flash[:errors].each do |error| %>
-              <h3><%= error %></h3><br>
+              <h3 id='flash'><%= error %></h3><br>
           <% end %>
       <% end %>
       <%= yield %>
