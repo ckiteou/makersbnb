@@ -78,7 +78,7 @@ class MakersBnB < Sinatra::Base
       redirect to('/listings')
     else
       flash.now[:errors] = ['The email or password is incorrect']
-      erb :'sessions/new'
+      erb :'users/login'
     end
   end
 
