@@ -32,10 +32,19 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/listings' do
-    Listing.create(name: params[:name],
-                   description: params[:description],
-                   price: params[:price])
-    redirect '/listings'
+    # current_user.Listing.create(name: params[:name],
+    #                description: params[:description],
+    #                price: params[:price])
+    if current_user
+      current_user.listings << Listing.first_or_create(name: params[:name],
+                                  description: params[:description],
+                                  price: params[:price], user_id: current_user.id)
+      current_user.save
+      redirect :'/listings'
+    else
+      flash.next[:errors] = @user.errors.full_messages
+      redirect :'/listings'
+    end
   end
 
   post '/listings/request' do
