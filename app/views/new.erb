@@ -1,17 +1,21 @@
 <h2> New Listing </h2>
 
 <form action='/listings' method='POST'>
-  <label for='name'>
-    <p>Listing Name:
-    <input type='text' name='name' /></p>
-  </label>
-  <label for='description'>
-    <p>Description:
-    <input type='text' name='description' /></p>
-  </label>
-  <label for='price'>
-    <p>Price in £:
-    <input type='text' name='price' /></p>
-  </label>
-  <input id='button' type='submit' value='Create listing'>
+<table>
+  <tr>
+    <td>Listing Name:</td>
+    <td><input type='text' name='name' /></td>
+  </tr>
+  <tr>
+    <td>Description:</td>
+    <td><input type='text' name='description' /></td>
+  </tr>
+  <tr>
+    <td>Price in £:<br></td>
+    <td><input type='text' name='price' /></td>
+  </tr>
+  <tr>
+    <td><br><input id='button' type='submit' value='Create listing'></td>
+  </tr>
+</table>
 </form>

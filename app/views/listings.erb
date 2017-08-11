@@ -2,10 +2,27 @@
   <a href='/listings/new'>+ add new</a>
     <ul>
       <% @listings.reverse.each do |listing| %>
-        <li><h3>Name: <%= listing.name %></h3>
-          <p>Description: <%= listing.description %></p>
-          <p>Price per night: £<%= listing.price %></p>
-          <p>Space owner: <%= User.get(listing.user_id).first_name %> <%= User.get(listing.user_id).last_name %></p>
-          <a href="/listings/<%= listing.id %>">Details of <%= listing.name %></a>
+        <li>
+          <table>
+            <tr>
+              <td><h3>Name:</h3></td>
+              <td><h3><%= listing.name %></h3></td>
+            </tr>
+            <tr>
+              <td>Description:</td>
+              <td><%= listing.description %></td>
+            </tr>
+            <tr>
+              <td>Price per night:</td>
+              <td>£<%= listing.price %></td>
+            </tr>
+            <tr>
+              <td>Space owner: </td>
+              <td><%= User.get(listing.user_id).first_name %> <%= User.get(listing.user_id).last_name %></td>
+            </tr>
+            <tr>
+              <td><br><a href="/listings/<%= listing.id %>">Details of <%= listing.name %></a></td>
+            </tr>
+          </table>
           <% end %></li>
     </ul>
