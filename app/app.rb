@@ -32,9 +32,6 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/listings' do
-    # current_user.Listing.create(name: params[:name],
-    #                description: params[:description],
-    #                price: params[:price])
     if current_user
       current_user.listings << Listing.first_or_create(name: params[:name],
                                   description: params[:description],
@@ -42,7 +39,7 @@ class MakersBnB < Sinatra::Base
       current_user.save
       redirect :'/listings'
     else
-      flash.next[:errors] = @user.errors.full_messages
+      flash.next[:notice] = "You need to be logged in to create listing"
       redirect :'/listings'
     end
   end
@@ -101,7 +98,7 @@ class MakersBnB < Sinatra::Base
 
   delete '/sessions' do
     session[:user_id] = nil
-    flash.keep[:notice] = 'goodbye!'
+    flash.keep[:notice] = 'Goodbye! See you soon!'
     redirect to '/listings'
   end
 
