@@ -1,8 +1,11 @@
 <h2>Name: <%= @listing.name %></h2>
-<p>Description:<%= @listing.description %></p>
+<p>Description: <%= @listing.description %></p>
 <p>Price per night: £<%= @listing.price %></p>
   <form action="/listings/<%=@listing.id%>/request" method="post">
-    <select name="day">
+<table>
+  <tr>
+    <td>
+      <p><select name="day">
       <option value="11">11</option>
       <option value="12">12</option>
       <option value="13">13</option>
@@ -24,11 +27,16 @@
       <option value="29">29</option>
       <option value="30">30</option>
       <option value="31">31</option>
-    </select> August 2017<br><br>
-    <input id='button' type="submit" value="Create available date">
+    </select> August 2017</p>
+  </td>
+    <td><br><input id='button' type="submit" value="Create available date"></td>
+  </tr>
   </form>
 
   <% if @availability %>
-    <p>Available date: <%= @availability.day %> August 2017</p>
-    <input id='button' type="submit" value="Request to book">
+    <tr>
+      <td><p>Available date: <%= @availability.day %> August 2017</p></td>
+      <td><br><input id='button' type="submit" value="Request to book"></td>
+    </tr>
+  </table>
   <% end %>
