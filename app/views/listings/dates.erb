@@ -2,7 +2,7 @@
 <p>Description:<%= @listing.description %></p>
 <p>Price per night: £<%= @listing.price %></p>
   <form action="/listings/<%=@listing.id%>/request" method="post">
-    <select name="Day">
+    <select name="day">
       <option value="11">11</option>
       <option value="12">12</option>
       <option value="13">13</option>
@@ -27,3 +27,7 @@
     </select> August 2017<br><br>
     <input id='button' type="submit" value="Create available date">
   </form>
+
+  <% if @availability %>
+    <p>Available date: <%= @availability.day %> August 2017</p>
+  <% end %>

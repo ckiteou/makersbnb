@@ -81,13 +81,15 @@ class MakersBnB < Sinatra::Base
 
   get '/listings/:id' do
     @listing = Listing.get(params[:id])
+    @availability = Availability.last
     erb :'listings/dates'
   end
 
-  # post "/listings/:id/request" do
-  #   @date =
-  # end
-  
+  post "/listings/:id/request" do
+    Availability.create(day: params[:day])
+    redirect "/listings/#{params[:id]}"
+  end
+
   delete '/sessions' do
     session[:user_id] = nil
     flash.keep[:notice] = 'goodbye!'
