@@ -12,5 +12,7 @@ feature 'It shows an individual listing page with available dates' do
     select('22', :from => 'day')
     click_button 'Create available date'
     expect(page).to have_content "Available date: 22 August 2017"
+    click_button 'Request to book'
   end
+
 end
