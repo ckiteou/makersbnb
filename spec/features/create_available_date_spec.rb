@@ -1,4 +1,12 @@
+
 feature 'It shows an individual listing page with available dates' do
+
+  before do
+    sign_up
+    sign_in(email: 'coasters@kiteou.com',
+    password: 'percy1234')
+  end
+
   scenario 'there is a page with listing details' do
     create_listing
     click_link("Details of Cong's Pad")
