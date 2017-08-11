@@ -6,8 +6,8 @@ class Listing
   property :id,           Serial
   property :name,         String
   property :description,  String
-  property :price,        Numeric
-  property :user_id,      Numeric
+  property :price,        Integer
+  property :user_id,      Integer
 
 
 end
