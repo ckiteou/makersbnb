@@ -5,6 +5,7 @@
         <li><h3>Name: <%= listing.name %></h3>
           <p>Description: <%= listing.description %></p>
           <p>Price per night: £<%= listing.price %></p>
+          <p>Space owner: <%= User.get(listing.user_id).first_name %> <%= User.get(listing.user_id).last_name %></p>
           <a href="/listings/<%= listing.id %>">Details of <%= listing.name %></a>
           <% end %></li>
     </ul>

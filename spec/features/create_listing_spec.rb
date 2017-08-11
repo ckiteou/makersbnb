@@ -1,4 +1,10 @@
 feature 'Creating listings' do
+  before do
+    sign_up
+    sign_in(email: 'coasters@kiteou.com',
+    password: 'percy1234')
+  end
+
   scenario 'it can create a listing' do
     visit '/listings/new'
     fill_in :name, with: 'My beautiful home'
@@ -35,6 +41,14 @@ feature 'Creating listings' do
       expect(page).to have_content('lovely place')
       expect(page).to have_content(50)
     end
+  end
+
+  scenario 'it contains first and last name of space owner' do
+    create_listing
+    listing = Listing.first
+    user = User.get(listing.user_id)
+    expect(page).to have_content('Coasters Kiteou')
+    expect(user.first_name).to eq('Coasters')
   end
 
 end
