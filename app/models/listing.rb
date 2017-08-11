@@ -6,7 +6,7 @@ class Listing
   property :id,           Serial
   property :name,         String
   property :description,  String
-  property :price,        Integer
+  property :price,        Numeric
   property :user_id,      Integer
 
 
